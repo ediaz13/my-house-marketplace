@@ -5,7 +5,7 @@ import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import SignIn from "./pages/SignIn";
-import SignOut from "./pages/SignOut";
+import SignUp from "./pages/SignUp";
 import Navbar from "./components/Navbar";
 
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/profile" element={<SignIn />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-out" element={<SignOut />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
         <Navbar />
       </Router>

@@ -4,13 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
-function SignIn() {
+function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
-  const { email, password } = formData;
+  const { name, email, password } = formData;
 
   const navigate = useNavigate();
 
@@ -30,6 +31,15 @@ function SignIn() {
         </header>
 
         <form>
+        <input
+            type="text"
+            className="nameInput"
+            placeholder="Name"
+            id="name"
+            value={name}
+            onChange={onChange}
+          />
+
           <input
             type="email"
             className="emailInput"
@@ -61,11 +71,11 @@ function SignIn() {
             Forgot password?
           </Link>
 
-          <div className="signInBar">
-            <p className="signInText">
-              Sign In
+          <div className="signUpBar">
+            <p className="signUpText">
+              Sign Up
             </p>
-            <button className="signInButton">
+            <button className="signUpButton">
               <ArrowRightIcon fill='#ffffff' width='34px' height='34px'/>
             </button>
           </div>
@@ -73,8 +83,8 @@ function SignIn() {
 
         {/* Google OAuth */}
 
-        <Link to="/sign-up" className="registerLink">
-          Sign Up Instead
+        <Link to="/sign-in" className="registerLink">
+          Sign In Instead
         </Link>
 
       </div>
@@ -82,4 +92,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;
