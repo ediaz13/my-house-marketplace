@@ -9,14 +9,15 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.28.1",
     "react-scripts": "^3.0.1",
+    "react-toastify": "^8.0.3",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-  "start": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-  "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-  "test": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts test",
-  "eject": "react-scripts eject"
-},
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

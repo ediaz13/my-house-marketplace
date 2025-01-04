@@ -12,7 +12,7 @@ function Profile() {
 
 
 
-  return user ? <h1>{user.email}</h1> : <h1>Profile</h1>
+  return user ? <h1>{user.email}</h1> : <h1>Not Logged In</h1>
 }
 
 export default Profile
