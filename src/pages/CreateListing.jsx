@@ -63,7 +63,7 @@ function CreateListing() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    //setLoading(true);
 
     // Add listing to Firestore
     // Redirect to profile
