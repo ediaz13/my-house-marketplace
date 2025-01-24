@@ -83,13 +83,29 @@ function CreateListing() {
 
     if(geolocationEnabled) {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCcuT58VSCJiLLRefDZNJ8bIX3F9jjwKU0`
-
+        `https://maps.googleapis.com/maps/api/
+        geocode/json?address=${address}&key=$
+        {process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
       )
 
       const data = await response.json()
 
-      console.log(data)
+      geolocation.lat = data.results[0]?.geometry.location.lat ?? 0
+      geolocation.lng = data.results[0]?.geometry.location.lng ?? 0
+
+
+      location = 
+        data.status === 'ZERO_RESULTS' 
+        ? address
+        : data.results[0]?.formatted_address
+
+      if (location === undefined || location.includes
+        ('undefined')) {
+        setLoading(false);
+        toast.error("Please enter a valid address.");
+        return
+      }
+
     } else {
       geolocation = {
         latitude: latitude,
